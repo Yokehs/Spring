@@ -7,11 +7,9 @@ public class Main {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "AppContext.xml"
         );
-        Artist artistBean = context.getBean("artist", Artist.class);
+        Cinema cinemaBean = context.getBean("cinema", Cinema.class);
 
-        System.out.println(artistBean.getId());
-        System.out.println(artistBean.getName());
-        System.out.println(artistBean.getListArtWorks());
+        cinemaBean.showFilm();
 
         context.close();
     }

@@ -7,11 +7,15 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="artist"
-          class="org.example.Artist">
-        <constructor-arg value="1"/>
-        <constructor-arg value="Quentin Tarantino"/>
-        <constructor-arg value="The Hateful Eight"/>
+    <bean id="filmBean"
+          class="org.example.genres.Horror">
     </bean>
+    <bean id="cinema"
+          class="org.example.Cinema">
+        <constructor-arg ref="filmBean"/>
+    </bean>
+
+
+
 
 </beans>
