@@ -13,9 +13,8 @@
     <bean id="cinema"
           class="org.example.Cinema">
         <property name="film" ref="filmBean"/>
+        <property name="name" value="Some film name"/>
+        <property name="filmLength" value="7800"/>
     </bean>
-
-
-
 
 </beans>
