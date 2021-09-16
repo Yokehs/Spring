@@ -8,14 +8,27 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
     <context:property-placeholder location="classpath:Cinema.properties"/>
 
-    <bean id="filmBean"
+    <bean id="filmHorror"
           class="org.example.genres.Horror">
     </bean>
+
+    <bean id="filmDocumentary"
+          class="org.example.genres.DocumentaryFilm">
+    </bean>
+
+    <bean id="filmThrillers"
+          class="org.example.genres.Thrillers">
+    </bean>
+
     <bean id="cinema"
           class="org.example.Cinema">
-        <property name="film" ref="${cinema.file}"/>
-        <property name="name" value="${cinema.name}"/>
-        <property name="filmLength" value="${cinema.filmLength}"/>
+        <property name="filmList">
+            <list value-type="org.example.Film">
+                <ref bean="filmHorror"/>
+                <ref bean="filmDocumentary"/>
+                <ref bean="filmThrillers"/>
+            </list>
+        </property>
     </bean>
 
 </beans>

@@ -9,7 +9,7 @@ public class Main {
         );
         Cinema cinemaBean = context.getBean("cinema", Cinema.class);
 
-        cinemaBean.getProperty();
+        cinemaBean.showFilms();
 
         context.close();
     }

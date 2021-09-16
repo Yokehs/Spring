@@ -1,6 +1,7 @@
 package org.example;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cinema{
@@ -10,6 +11,14 @@ public class Cinema{
 
 
     public Cinema() {}
+
+    public List<Film> getFilmList() {
+        return filmList;
+    }
+
+    public void setFilmList(List<Film> filmList) {
+        this.filmList = filmList;
+    }
 
     public String getName() {
         return name;
@@ -27,7 +36,19 @@ public class Cinema{
         this.filmLength = filmLength;
     }
 
-    public void showFilm(){
+    public void showFilms(){
+        int i = 0;
+        if (i < filmList.size()){
+            while (i < filmList.size()) {
+                System.out.println(filmList.get(i).getFilm());
+                i++;
+            }
+            System.out.println("Показ окончен");
+        } else {
+            System.out.println("Фильмов нет");
+        }
+    }
+    /*public void showFilm(){
         System.out.println("Film show: " + film.getFilm());
     }
 
@@ -43,6 +64,6 @@ public class Cinema{
                 min = secs / 60 % 60,
                 sec = secs % 60;
         return String.format("%02d:%02d:%02d", hour, min, sec);
-    }
+    }*/
 
 }
