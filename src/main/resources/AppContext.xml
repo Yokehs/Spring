@@ -12,7 +12,7 @@
     </bean>
     <bean id="cinema"
           class="org.example.Cinema">
-        <constructor-arg ref="filmBean"/>
+        <property name="film" ref="filmBean"/>
     </bean>
 
 
