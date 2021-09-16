@@ -6,15 +6,16 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:property-placeholder location="classpath:Cinema.properties"/>
 
     <bean id="filmBean"
           class="org.example.genres.Horror">
     </bean>
     <bean id="cinema"
           class="org.example.Cinema">
-        <property name="film" ref="filmBean"/>
-        <property name="name" value="Some film name"/>
-        <property name="filmLength" value="7800"/>
+        <property name="film" ref="${cinema.file}"/>
+        <property name="name" value="${cinema.name}"/>
+        <property name="filmLength" value="${cinema.filmLength}"/>
     </bean>
 
 </beans>

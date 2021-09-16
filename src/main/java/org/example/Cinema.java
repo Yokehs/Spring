@@ -1,17 +1,15 @@
 package org.example;
 
 
+import java.util.List;
+
 public class Cinema{
-    private Film film;
+    private List<Film> filmList;
     private String name;
     private long filmLength;
 
-    public Cinema(Film film) {
-        this.film = film;
-    }
 
-    public Cinema() {
-    }
+    public Cinema() {}
 
     public String getName() {
         return name;
@@ -19,15 +17,6 @@ public class Cinema{
 
     public void setName(String name) {
         this.name = name;
-    }
-
-
-    public Film getFilm() {
-        return film;
-    }
-
-    public void setFilm(Film film) {
-        this.film = film;
     }
 
     public long getFilmLength() {
